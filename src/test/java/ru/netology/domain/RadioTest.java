@@ -149,7 +149,7 @@ class RadioTest {
     public void shouldSetCurrentChanelAndStation() {
         Radio rad = new Radio(0,19,18,100,0,25,19);
 
-        assertEquals(20, rad.getRadioChanel());
+        assertEquals(19, rad.getRadioChanel());
 
 
     }
