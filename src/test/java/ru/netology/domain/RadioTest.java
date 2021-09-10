@@ -109,6 +109,7 @@ class RadioTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetNextStationWhenCurrentIsMin() {
         Radio rad = new Radio();
@@ -119,6 +120,7 @@ class RadioTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetPrevStationWhenCurrentIsMax() {
         Radio rad = new Radio();
@@ -129,42 +131,23 @@ class RadioTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldSetMRadioChanel() {
+    public void shouldSetRadioChanel() {
         Radio rad = new Radio();
         int expected = rad.getRadioChanel();
-        rad.setCurrentStation(rad.getRadioChanel());
+        rad.setCurrentStation(rad.getMaxStation()+1);
         int actual = rad.getRadioChanel();
         assertEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldSetMinStationAfterMaxStationWithConstructor() {
-        Radio rad = new Radio(0,19,19,100,0,25,20);
+    public void shouldSetQuantityStationWhenSetChanel() {
+        Radio rad = new Radio(50);
 
-        assertEquals(0, rad.getMinStation());
+        assertEquals(49, rad.getMaxStation());
 
-    }
-    @Test
-    public void shouldSetCurrentChanelAndStation() {
-        Radio rad = new Radio(0,19,18,100,0,25,19);
-
-        assertEquals(19, rad.getRadioChanel());
-
-
-    }
-    @Test
-    public void shouldSetIncreaseVolumeAsMaxWithConstructor() {
-        Radio rad = new Radio(0,19,18,100,0,25,19);
-
-        assertEquals(100, rad.getMaxVolume());
-
-    }
-    @Test
-    public void shouldSetIncreaseVolumeAsMinWithConstructor() {
-        Radio rad = new Radio(0,19,18,100,0,25,19);
-
-        assertEquals(0, rad.getMinVolume());
 
     }
 }
